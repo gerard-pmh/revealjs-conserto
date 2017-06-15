@@ -1,0 +1,73 @@
+/**
+ * Conserto theme for reveal.js
+ *
+ * By Pierre Gerard
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Conserto colors
+$conserto-pink: 	rgb(234, 82, 151);
+$conserto-grey: 	rgb(166, 161, 160);
+$conserto-white:	rgb(245, 245, 245);
+$conserto-blue: 	rgb(82, 172, 210);
+$conserto-green: 	rgb(71, 169, 89);
+$conserto-yellow: rgb(244, 198, 23);
+$conserto-orange:	rgb(238, 121, 37);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: $conserto-white;
+
+$mainColor: $conserto-grey;
+$headingColor: $conserto-pink;
+
+$mainFontSize: 36px;
+$mainFont: Calibri, Helvetica, sans-serif;
+$headingFont: Calibri, Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: capitalize;
+$headingFontWeight: 400;
+$linkColor: $conserto-pink;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: $conserto-white;
+	}
+}
+
+// Image dirty fix
+.reveal section img {
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+// Better source code font
+.reveal pre code {
+	font-family: Consolas, Courier New, Courier, monospace;
+}
+
+// Logo conserto
+body:after {
+	content: url(../../img/logo-conserto.png);
+	position: fixed;
+	bottom: 1.5em;
+	left: 1.5em;
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
