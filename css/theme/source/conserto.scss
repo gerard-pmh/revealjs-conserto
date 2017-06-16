@@ -49,10 +49,10 @@ section.has-dark-background {
 }
 
 // Image dirty fix
-.reveal section img {
-	background: none !important;
-	border: none !important;
-	box-shadow: none !important;
+body .reveal section img {
+	background: none;
+	border: none;
+	box-shadow: none;
 }
 
 // Better source code font
@@ -60,7 +60,7 @@ section.has-dark-background {
 	font-family: Consolas, Courier New, Courier, monospace;
 }
 
-// Logo conserto
+// Conserto logo
 body:after {
 	content: url(../../img/logo-conserto.png);
 	position: fixed;
