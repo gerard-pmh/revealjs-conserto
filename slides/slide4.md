@@ -1,12 +1,21 @@
 # Code
 
+```php
+<ul>
+<? foreach ($x as $y) { ?>
+  <li><?php echo $y?></li>
+<? } ?>
+</ul>
+```
+
 ```js
-while (true) {
-  console.log('lol');
+function sayHello(name) {
+  return `Hello ${name}`;
 }
+console.log(sayHello('John'));
 ```
 
 ```bash
 #!/bin/bash
-rm -rf /
+echo "hello world"
 ```
