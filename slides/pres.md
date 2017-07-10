@@ -2,7 +2,7 @@
 
 ---
 
-# La gestion des dépendences en HTMTL
+# La gestion des dépendences en HTML
 
 ---
 
@@ -46,7 +46,7 @@ myFramework.doSomething();
 
 ---
 
-### Les avantages de de l'import via HTML
+### Les avantages de l'import via HTML
 - Simple, mise en place rapide
 - Supporté nativement par le navigateur
 
