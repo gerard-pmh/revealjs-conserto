@@ -2,38 +2,28 @@
 
 ---
 
-# La gestion des dépendences en HTML
+# Classic Script
 
 ---
 
-index.html
-```html
-<script src="script-1.js"></script>
-<script src="script-2.js"></script>
-<script src="script-3.js"></script>
-```
-
----
-
-script-1.js
+my-framework.js
 ```js
 var myFramework = {
   doSomething: function() {
-    return 'original function';
+    // ...
   }
 };
 ```
 
-script-2.js
-```js
-myFramework.doSomething = function() {
-  return 'silently overrided function';
-};
-```
-
-script-3.js
+main.js
 ```js
 myFramework.doSomething();
+```
+
+index.html
+```html
+<script src="my-framework.js"></script>
+<script src="main.js"></script>
 ```
 
 ---
@@ -46,12 +36,82 @@ myFramework.doSomething();
 
 ---
 
-### Les avantages de l'import via HTML
+### Avantages
 - Simple, mise en place rapide
-- Supporté nativement par le navigateur
+- Supporté nativement par les navigateurs
+- Possibilité d'utiliser des Content Delivery Network (CDN)
 
 ---
 
-### Les inconvenients
-- Le JavaScript "s'empile", résultats imprédictibles
-- Complexe à gérer avec de grosses applications
+### Inconvénients
+- "Pollution" du scope global
+- Complexe avec beaucoup de composants / dépendances
+
+---
+
+# Les Modules ES2015
+
+---
+
+my-framework.js
+```js
+export const myFramework = {
+  doSomething() {
+    // ...
+  }
+};
+```
+
+main.js
+```js
+import { myFramework } from './my-framework';
+
+myFramework.doSomething();
+```
+
+---
+
+index.html
+```html
+<script src="bundle.js"></script>
+```
+
+```bash
+npm install -g rollup
+rollup main.js --format iife --output bundle.js
+```
+
+---
+
+bundle.js
+```js
+(function () {
+'use strict';
+
+const myFramework = {
+  doSomething() {
+    // ...
+  }
+};
+
+myFramework.doSomething();
+
+}());
+```
+
+---
+
+### Avantages
+- Chaque module a son propre scope, seul les variables exportées sont visibles par les autres modules et nécessitent un import explicite
+- Facilite la construction d'applications complexes
+
+---
+
+### Inconvénients
+- Support partiel par les navigateurs
+- Utilisation des CDN difficile
+
+---
+
+![Google 1](img/google-dep.png)
+![Google 2](img/google-es6-module.png)
