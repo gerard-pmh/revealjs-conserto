@@ -12,7 +12,7 @@
 
 // Conserto colors
 $conserto-pink: 	rgb(234, 82, 151);
-$conserto-grey: 	rgb(166, 161, 160);
+$conserto-grey: 	darken(rgb(166, 161, 160), 20%);
 $conserto-white:	rgb(245, 245, 245);
 $conserto-blue: 	rgb(82, 172, 210);
 $conserto-green: 	rgb(71, 169, 89);
@@ -62,7 +62,7 @@ body .reveal section img {
 
 // Conserto logo
 body:after {
-	content: url(../../img/logo-conserto.png);
+	content: url(../../img/conserto-logo.png);
 	position: fixed;
 	bottom: 1.5em;
 	left: 1.5em;
