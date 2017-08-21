@@ -27,7 +27,9 @@
 
 - Gestion des dépendances
 - Transcompilation (traduction d'un language vers un autre)
-- Compatibilité avec les différents navigateurs (polyfills, autoprefixer)
+- Compatibilité avec les différents navigateurs
+    - polyfill
+    - autoprefixer
 - Analyse statique de code (linting)
 - Automatisation des tests unitaires et d'intégration
 - Assemblage, optimisation, compression et obfuscation du code
@@ -272,9 +274,9 @@ npm run build
 
 ### Présentation des Frameworks / Bibliothèques
 
-- Angular
-- React
-- Vue
+![angular logo](img/angular-logo.png) <!-- .element height="30%" width="30%" -->
+![react logo](img/react-logo.png) <!-- .element height="30%" width="30%" -->
+![vue logo](img/vue-logo.png) <!-- .element height="30%" width="30%" -->
 
 ---
 
@@ -287,6 +289,8 @@ npm run build
 - Injection de dépendance
 - Programmation réactive avec RxJS
 
+![angular logo](img/angular-logo.png) <!-- .element height="20%" width="20%" -->
+
 ---
 
 ### React
@@ -294,8 +298,12 @@ npm run build
 - Bibliothèque développée par Facebook
 - Disponible depuis Mars 2013
 - Gère la partie "vue" d'une application front-end
-- Est utilisé avec d'autres librairies (react-router, redux, fetch)
+- Est utilisé avec d'autres librairies :
+    - react-router
+    - redux
 - Utilise JSX, une extension du language JavaScript permettant de générer du HTML
+
+![react logo](img/react-logo.png) <!-- .element height="20%" width="20%" -->
 
 ---
 
@@ -304,22 +312,26 @@ npm run build
 - Bibliothèque créée par Evan You, ancien membre de l'équipe AngularJS
 - Disponible depuis Février 2014
 - Gère la partie "vue" d'une application front-end
-- Est utilisé avec des librairies officiellement supportées (vue-router, vuex)
+- Est utilisé avec des librairies officiellement supportées :
+    - vue-router
+    - vuex
 - Syntaxe particulièrement simple
+
+![vue logo](img/vue-logo.png) <!-- .element height="20%" width="20%" -->
 
 ---
 
-### Component Based Architecture I
+### Component Based Architecture
 
 Constitution d'un composant :
-- Template
 - Propriétés / Etat
+- Template / Fonction de rendu
 - Méthodes
 - Fiche de style
 
 ---
 
-### Component Based Architecture II
+### Component Based Architecture
 
 Un composant peut :
 - Passer des propriétés à ses composants enfants
@@ -327,7 +339,7 @@ Un composant peut :
 
 ---
 
-### Component Based Architecture III
+### Component Based Architecture
 
 ![cba diagram](img/cba-diagram.png) <!-- .element height="70%" width="70%" -->
 
@@ -335,22 +347,182 @@ source: http://coenraets.org/blog/2014/12/sample-mobile-application-with-react-a
 
 ---
 
-### Exemples
+### Exemple - Angular
 
-- vue
-- react
-- angular
+hello.component.ts
+```typescript
+import { Component, Input } from '@angular/core';
+
+@Component({
+ selector: 'app-hello',
+ template: `
+   <div>
+      Hello, {{ userName }} !
+   </div>
+   ` 
+})
+export class HelloComponent {
+  @Input() userName: string;
+}
+```
+
+```html
+<app-hello [userName]="Angular"></app-hello>
+```
+
+Hello, Angular !
 
 ---
 
-### Application bureau
+### Exemple - React
 
-- Electron
+HelloComponent.js
+```js
+import React from 'react';
+
+export default function HelloComponent (props) {
+    return (
+        <div>
+            Hello, {props.userName} !
+        </div>
+    );
+}
+```
+
+```js
+<HelloComponent userName="React" />
+```
+
+Hello, React !
+
+---
+
+### Exemple - Vue
+
+HelloComponent.vue
+```html
+<template>
+    <div>
+        Hello, {{ userName }} !    
+    </div>
+</template>
+<script>
+    export default {
+        props: [ 'userName' ]
+    }
+</script>
+```
+
+```html
+<hello-component :userName="vue"></hello-component>
+```
+
+Hello, Vue !
+
+---
+
+### Example - Compteur
+
+![example counter](img/example-counter.png)
+
+---
+
+### Exemple - Angular
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+ selector: 'app-counter',
+ template: `
+   <div>
+      {{ count }}
+      <button (click)="add()">ADD</button>
+   </div>
+   ` 
+})
+export class HelloComponent {
+  count = 0;
+  add() {
+    this.count++
+  }
+}
+```
+
+---
+
+### Exemple - React
+
+```js
+import React from 'react';
+
+export default class CounterComponent extends React.Component {
+    constructor() {
+        super();
+        this.state = { counter: 0 };
+    }
+    add() {
+        this.setState({ counter: this.state.counter++ })
+    }
+    render() {
+        return (
+          <div>
+             {this.state.counter}
+             <button onClick={this.add}>ADD</button>
+          </div>
+        );
+    }
+}
+```
+
+---
+
+### Exemple - Vue
+
+```html
+<template>
+    <div>
+        {{ count }}   
+        <button @click="add">ADD</button>
+    </div>
+</template>
+<script>
+    export default {
+        data() {
+           return { count: 0 }
+        },
+        methods: {
+            add() { 
+                this.count++
+            }
+        }
+    }
+</script>
+```
+
+---
+
+### Electron
+
+- Permet d'écrire des applications de bureau à partir des technologies web
+- Plates-formes supportées :
+    - GNU Linux
+    - Windows
+    - macOS
+- Système de mises à jour automatiques
+- Utilisé notamment pour Slack, VSCode et Atom
+
+![electron logo](img/electron-logo.svg) <!-- .element height="15%" width="15%" -->
 
 ---
 
 ### Applications mobiles
 
-- Ionic
+- Ionic (Angular)
 - React Native
-- Weex
+- Weex (Vue)
+
+---
+
+![js logo](img/js-logo.png)  <!-- .element height="30%" width="30%" -->
+## Questions ?
