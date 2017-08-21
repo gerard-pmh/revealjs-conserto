@@ -421,7 +421,7 @@ Hello, Vue !
 
 ---
 
-### Example - Compteur
+### Exemple - Compteur
 
 ![example counter](img/example-counter.png)
 
