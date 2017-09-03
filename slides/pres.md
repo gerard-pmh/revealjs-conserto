@@ -37,14 +37,17 @@
 
 ---
 
-### ECMAScript 2015
+### ECMAScript 2015 (ES6)
 
 - Norme sur laquelle est basée le language JavaScript
 - Apporte de nombreux ajouts au language
 - En cours d'implementation dans les navigateurs
-- Peut être utilisé dès aujourd'hui avec Babel
+- Peut être utilisé dès aujourd'hui avec :
+    - Babel (transpiler)
+    - Webpack (module bundler)
 
 ![babel logo](img/babel-logo.png)  <!-- .element height="30%" width="30%" -->
+![webpack logo](img/webpack-logo.png)  <!-- .element height="20%" width="20%" -->
 
 ---
 
@@ -90,14 +93,12 @@ framework.js
 ```js
 export class Framework {
     property;
-    
     constructor(property) {
         this.property = property;
-    }    
-    
+    }
     doSomething() {
         // ...
-    }  
+    }
 }
 ```
 
@@ -115,23 +116,35 @@ framework.doSomething();
 ### ECMAScript 2015 - Arrow Functions
 
 ```js
-[ 1, 2, 3 ].filter(function (x) {
-    return x > 1;
-}); // [ 2, 3 ]
+[ 'example.fr', 'example.com' ].filter(function (x) {
+    return x.endsWith('.fr');
+}); // [ 'example.fr' ]
 ```
 
 ```js
-[ 1, 2, 3 ].filter(x => x > 1); // [ 2, 3 ]
+[ 'example.fr', 'example.com' ].filter(x => x.endsWith('.fr'));
+// [ 'example.fr' ]
 ```
 
 ---
 
-### ECMAScript 2015 - Destructuring
+### ECMAScript 2015
+### Destructuring - Template Strings
 
 ```js
-const [ a, b, c ] = [ 1, 2 ,3 ];
+const user = { name: 'John', mail: 'john@mail.com', age: 30 };
 
-console.log(b) // 2
+function oldHello(user) {
+    console.log(
+        'Hello ' + user.name + ', you are ' + user.age + ' years old !'
+    );
+}
+
+function hello({ name, age }) {
+    console.log(`Hello ${name}, you are ${age} years old !`);
+}
+
+hello(user); // Hello John, you are 30 years old !
 ```
 
 ---
@@ -163,7 +176,8 @@ example(); // 'default parameter'
 
 - Language de programmation libre et open source développé par Microsoft
 - Basé sur ES2015
-- Système de typage statique et facultatif
+- Typage statique et facultatif
+- Annotations
 - Compatible avec du code JavaScript standard
 - Améliore grandement la compréhension du code par l'IDE
 
@@ -190,16 +204,6 @@ function getExample(): Example {
   return { prop1: 'test', prop2: 2 };
 }
 ```
-
----
-
-### Webpack - Module Bundler
-
-![webpack diagram](img/webpack-diagram.svg) <!-- .element height="80%" width="80%" -->
-
-- Gère principalement l'assemblage des dépendances et modules
-- Rôle central dans l'outillage front-end
-
 
 ---
 
@@ -241,7 +245,7 @@ create-react-app my-app
 cd my-app
 
 # Serveur de développement
-ng start
+npm start
 
 # Construction avec optimisations
 npm run build
@@ -286,8 +290,8 @@ npm run build
 - Disponible en version stable depuis Septembre 2016
 - Réécriture totale d'AngularJS
 - Supporte officiellement, recommande, et est écrit avec TypeScript
-- Injection de dépendance
-- Programmation réactive avec RxJS
+- Injection de dépendance (singleton)
+- Programmation fonctionnelle réactive avec RxJS
 
 ![angular logo](img/angular-logo.png) <!-- .element height="20%" width="20%" -->
 
@@ -415,7 +419,7 @@ HelloComponent.vue
 
 ```html
 <hello-component :userName="vue"></hello-component>
-```
+``` 
 
 Hello, Vue !
 
@@ -444,7 +448,7 @@ import { Component } from '@angular/core';
 export class HelloComponent {
   count = 0;
   add() {
-    this.count++
+    this.count = this.count + 1;
   }
 }
 ```
@@ -457,17 +461,17 @@ export class HelloComponent {
 import React from 'react';
 
 export default class CounterComponent extends React.Component {
-    constructor() {
-        super();
-        this.state = { counter: 0 };
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
     }
     add() {
-        this.setState({ counter: this.state.counter++ })
+        this.setState({ count: this.state.count + 1 });
     }
     render() {
         return (
           <div>
-             {this.state.counter}
+             {this.state.count}
              <button onClick={this.add}>ADD</button>
           </div>
         );
@@ -493,34 +497,12 @@ export default class CounterComponent extends React.Component {
         },
         methods: {
             add() { 
-                this.count++
+                this.count = this.count + 1
             }
         }
     }
 </script>
 ```
-
----
-
-### Electron
-
-- Permet d'écrire des applications de bureau à partir des technologies web
-- Plates-formes supportées :
-    - GNU Linux
-    - Windows
-    - macOS
-- Système de mises à jour automatiques
-- Utilisé notamment pour Slack, VSCode et Atom
-
-![electron logo](img/electron-logo.svg) <!-- .element height="15%" width="15%" -->
-
----
-
-### Applications mobiles
-
-- Ionic (Angular)
-- React Native
-- Weex (Vue)
 
 ---
 
