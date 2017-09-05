@@ -3,6 +3,20 @@
 
 ---
 
+### L'outillage front-end moderne
+
+- Gestion des dépendances
+- Transcompilation (traduction d'un language vers un autre)
+- Compatibilité avec les différents navigateurs
+    - polyfill
+    - autoprefixer
+- Analyse statique de code (linting)
+- Automatisation des tests unitaires et d'intégration
+- Assemblage, optimisation, compression et obfuscation du code
+- Serveur de développement avec "live reload"
+
+---
+
 ### Node.js
 
 - Environnement d'exécution JavaScript en dehors du navigateur
@@ -20,20 +34,6 @@
 - Environ 500 000 packets disponibles
 
 ![npm logo](img/npm-logo.png)  <!-- .element height="30%" width="30%" -->
-
----
-
-### L'outillage front-end moderne
-
-- Gestion des dépendances
-- Transcompilation (traduction d'un language vers un autre)
-- Compatibilité avec les différents navigateurs
-    - polyfill
-    - autoprefixer
-- Analyse statique de code (linting)
-- Automatisation des tests unitaires et d'intégration
-- Assemblage, optimisation, compression et obfuscation du code
-- Serveur de développement avec "live reload"
 
 ---
 
