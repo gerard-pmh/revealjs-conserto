@@ -3,6 +3,10 @@
 
 ---
 
+![all logo](img/all-logo.png)  <!-- .element height="80%" width="80%" --->
+
+---
+
 ### L'outillage front-end moderne
 
 - Gestion des dépendances
@@ -14,6 +18,10 @@
 - Automatisation des tests unitaires et d'intégration
 - Assemblage, optimisation, compression et obfuscation du code
 - Serveur de développement avec "live reload"
+
+---
+
+![javascript guy](img/javascript-guy.jpg)
 
 ---
 
@@ -185,6 +193,10 @@ example(); // 'default parameter'
 
 ---
 
+![typescript adds types](img/typescript-adds-types.jpg)
+
+---
+
 ### TypeScript - Exemple
 
 ```typescript
@@ -204,6 +216,10 @@ function getExample(): Example {
   return { prop1: 'test', prop2: 2 };
 }
 ```
+
+---
+
+![js 2010 vs 2016](img/js-2010-vs-2016.jpg) <!-- .element height="60%" width="60%" -->
 
 ---
 
@@ -503,6 +519,12 @@ export default class CounterComponent extends React.Component {
     }
 </script>
 ```
+
+---
+
+![angular logo](img/angular-logo.png) <!-- .element height="30%" width="30%" -->
+![react logo](img/react-logo.png) <!-- .element height="30%" width="30%" -->
+![vue logo](img/vue-logo.png) <!-- .element height="30%" width="30%" -->
 
 ---
 
