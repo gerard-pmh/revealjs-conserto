@@ -201,15 +201,15 @@ example(); // 'default parameter'
 
 ```typescript
 interface Example {
-    prop1: string,
-    prop2: number
+    prop1: string;
+    prop2: number;
     // optional field
-    prop3?: boolean
+    prop3?: boolean;
 }
 
 const example: Example = {
   prop1: 'test',
-  prop2: 2,
+  prop2: 2
 };
 
 function getExample(): Example {
